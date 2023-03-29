@@ -1,60 +1,129 @@
 package manager;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import models.User;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class HelperUser extends HelperBase
-{
-    public HelperUser(WebDriver wd)
-    {
+public class HelperUser extends HelperBase{
+    public HelperUser(WebDriver wd) {
         super(wd);
     }
 
-
-    public void openLoginForm()
-    {
+    public void openLoginForm() {
+        //click(By.cssSelector("a[href='/login?url=%2Fsearch']"));
+        //click(By.cssSelector("a[href ^='/login']"));
         click(By.xpath("//a[text()=' Log in ']"));
+
     }
 
-    public void fillLoginForm(String email,String password)
-    {
+    public void fillLoginForm(String email, String password) {
         type(By.id("email"),email);
         type(By.id("password"),password);
     }
+    public void fillLoginForm(User user) {
+        type(By.id("email"),user.getEmail());
+        type(By.id("password"), user.getPassword());
+    }
 
-    public void submitLogin()
-    {
+
+    public void submit() {
         click(By.cssSelector("button[type='submit']"));
     }
 
+    public String getMessage(){
+//        WebElement element = wd.findElement(By.cssSelector(".dialog-container>h2"));
+//        String  text = element.getText();
+//        return text;
 
-    public String getMessage()
-    {
-        WebDriverWait wait = new WebDriverWait(wd, Duration.ofSeconds(5));
+        // wait
+
+        WebDriverWait wait = new WebDriverWait(wd, Duration.ofSeconds(50));
         wait.until(ExpectedConditions.visibilityOf(wd.findElement(By.cssSelector(".dialog-container"))));
-        //pause(8000);
+
+        // pause(8000);
         return wd.findElement(By.cssSelector(".dialog-container>h2")).getText();
     }
 
-    public void closeWindow()
-    {
-        click(By.xpath("//button[text()='Ok']"));
+    public void closeWindow() {
+        if(isElementPresent(By.xpath("//button[text()='Ok']")))
+            click(By.xpath("//button[text()='Ok']"));
+
     }
 
-   public boolean isLogged()
-   {
-       return isElementPresent(By.xpath("//a[text()=' Logout ']"));
-   }
+    public boolean isLogged(){
+        return isElementPresent(By.xpath("//a[text()=' Logout ']"));
+    }
 
-    public void logout()
-    {
+    public void logout() {
         click(By.xpath("//a[text()=' Logout ']"));
     }
 
+    public String getErrorText() {
+        String text =wd.findElement(By.cssSelector("div.error")).getText();
+        System.out.println(text);
+
+        return text;
+
+    }
+
+    public boolean isYallaButtonNotActive() {
+        boolean res =  isElementPresent(By.cssSelector("button[disabled]"));
+        WebElement element = wd.findElement(By.cssSelector("button[type='submit']"));
+        boolean result = element.isEnabled();
+        return res && !result;
+    }
+    ///****************** Registration****************
+    public void openRegistrationForm() {
+        click(By.xpath("//a[text()=' Sign up ']"));
+    }
+
+    public void fillRegistrationForm(User user) {
+        type(By.id("name"), user.getFirstName());
+        type(By.id("lastName"), user.getLastName());
+        type(By.id("email"), user.getEmail());
+        type(By.id("password"), user.getPassword());
+    }
+
+    public void checkPolicy() {
+         //click(By.id("terms-of-use"));
+        click(By.cssSelector("label[for='terms-of-use']"));
+        // document.querySelector('#terms-of-use').click();
+        //pause(3000);
+        //JavascriptExecutor js = (JavascriptExecutor) wd;
+        //js.executeScript("document.querySelector('#terms-of-use').click();");
+    }
+    public void checkPolicyXY()
+    {
+        Dimension size = wd.manage().window().getSize();
+        System.out.println("Wight Screen---->" +size.getWidth());
+
+        WebElement label = wd.findElement(By.cssSelector("label[for='terms-of-use']"));
+        Dimension dimension = label.getSize();
+
+        Rectangle rect = label.getRect();
+        int w = rect.getWidth();
+
+        int xOffSet=-w/2;
+
+        Actions actions = new Actions(wd);
+
+        actions.moveToElement(label,xOffSet,2).click().release().perform();
+
+    }
+    //public boolean isAlertPresent(String message)
+    //{
+      //  WebDriverWait wait = new WebDriverWait(wd, Duration.ofSeconds(10));
+        //Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        //System.out.println(alert.getText());
+        //if(alert != null && alert.getText().contains(message))
+        //{
+         //   alert.accept();
+           // return true;
+        //}
+        //return false;
+    //}
 }
