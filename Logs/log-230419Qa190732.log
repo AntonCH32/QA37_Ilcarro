@@ -1,0 +1,10 @@
+19:07:34.278  INFO  manager.ApplicationManager - All tests run in Chrome browser
+19:07:36.013  INFO  manager.ApplicationManager - The link--->https://ilcarro.web.app/search
+19:07:42.606  INFO  tests.TestBase - Before method finish logout
+19:07:42.616  INFO  tests.TestBase - Started Method ---> addNewCarSuccess
+19:07:42.618  INFO  tests.TestBase - Test data ---> New Car: 'BMW' & Model: 'X5' 
+19:07:46.434  INFO  tests.TestBase - 'Assert check is Car 'added successful' massage exist'
+19:07:46.501  INFO  tests.TestBase - Started Method ---> addNewCarSuccessAll
+19:07:46.503  INFO  tests.TestBase - Start test 'addNewCarSuccessAll'
+19:07:46.504  INFO  tests.TestBase - Test data ---> New Car: 'Mazda' & Model: 'M3' 
+19:07:49.402  INFO  tests.TestBase - 'Assert check is Car 'added successful' massage exist'

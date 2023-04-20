@@ -1,8 +1,5 @@
 package manager;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -20,9 +17,15 @@ public class HelperBase {
         WebElement element = wd.findElement(locator);
         element.click();
         element.clear();
+        clearNew(element);
         if (text != null) {
             element.sendKeys(text);
         }
+    }
+    public void clearNew(WebElement element){
+        element.sendKeys(" ");
+        element.sendKeys(Keys.BACK_SPACE);
+
     }
 
     public void pause(int time) {
@@ -42,6 +45,23 @@ public class HelperBase {
 
     public boolean isElementPresent(By locator) {
         return wd.findElements(locator).size() > 0;
+    }
+    public void submit()
+    {
+        click(By.cssSelector("button[type='submit']"));
+    }
+
+    public String getMessage()
+    {
+        WebDriverWait wait = new WebDriverWait(wd, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOf(wd.findElement(By.cssSelector(".dialog-container"))));
+        return wd.findElement(By.cssSelector(".dialog-container>h2")).getText();
+    }
+
+    public boolean isListOfCarsAppeared(By locator)
+    {
+        List<WebElement> list =wd.findElements(locator);
+        return list.size()>0;
     }
 
 }

@@ -1,0 +1,15 @@
+19:14:05.126  INFO  manager.ApplicationManager - All tests run in Chrome browser
+19:14:06.847  INFO  manager.ApplicationManager - The link--->https://ilcarro.web.app/search
+19:14:06.877  INFO  tests.TestBase - Started Method ---> registrationSuccess
+19:14:11.926  INFO  tests.TestBase - Start test 'registrationSuccess'
+19:14:11.926  INFO  tests.TestBase - Test data ---> New User: 'Lisa' & LastName: 'Snow' 
+19:14:14.167  INFO  tests.TestBase - 'Assert check is 'You are logged in success' massage exist'
+19:14:14.232  INFO  tests.TestBase - Started Method ---> registrationWithoutEmail
+19:14:14.310  INFO  tests.TestBase - Before method finish logout
+19:14:20.388  INFO  tests.TestBase - Started Method ---> registrationWithoutFillingInRequiredFields
+19:14:31.165  INFO  tests.TestBase - Started Method ---> registrationWithoutFirstName
+19:14:41.966  INFO  tests.TestBase - Started Method ---> registrationWithoutPassword
+19:14:52.784  INFO  tests.TestBase - Started Method ---> registrationWrongEmail
+19:15:03.644  INFO  tests.TestBase - Started Method ---> registrationWrongPassword
+19:15:08.711  INFO  tests.TestBase - Test data ---> New User: 'Anton' & LastName: 'Cherkassky' 
+19:15:09.440  INFO  tests.TestBase - 'Assert check is 'Password must contain minimum 8 symbols' massage exist'

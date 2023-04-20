@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class HelperUser extends HelperBase{
+public class HelperUser extends HelperBase {
     public HelperUser(WebDriver wd) {
         super(wd);
     }
@@ -21,40 +21,22 @@ public class HelperUser extends HelperBase{
     }
 
     public void fillLoginForm(String email, String password) {
-        type(By.id("email"),email);
-        type(By.id("password"),password);
+        type(By.id("email"), email);
+        type(By.id("password"), password);
     }
+
     public void fillLoginForm(User user) {
-        type(By.id("email"),user.getEmail());
+        type(By.id("email"), user.getEmail());
         type(By.id("password"), user.getPassword());
     }
 
-
-    public void submit() {
-        click(By.cssSelector("button[type='submit']"));
-    }
-
-    public String getMessage(){
-//        WebElement element = wd.findElement(By.cssSelector(".dialog-container>h2"));
-//        String  text = element.getText();
-//        return text;
-
-        // wait
-
-        WebDriverWait wait = new WebDriverWait(wd, Duration.ofSeconds(50));
-        wait.until(ExpectedConditions.visibilityOf(wd.findElement(By.cssSelector(".dialog-container"))));
-
-        // pause(8000);
-        return wd.findElement(By.cssSelector(".dialog-container>h2")).getText();
-    }
-
-    public void closeWindow() {
-        if(isElementPresent(By.xpath("//button[text()='Ok']")))
+    public void closeWindow()
+    {
+        if (isElementPresent(By.xpath("//button[text()='Ok']")))
             click(By.xpath("//button[text()='Ok']"));
-
     }
 
-    public boolean isLogged(){
+    public boolean isLogged() {
         return isElementPresent(By.xpath("//a[text()=' Logout ']"));
     }
 
@@ -63,7 +45,7 @@ public class HelperUser extends HelperBase{
     }
 
     public String getErrorText() {
-        String text =wd.findElement(By.cssSelector("div.error")).getText();
+        String text = wd.findElement(By.cssSelector("div.error")).getText();
         System.out.println(text);
 
         return text;
@@ -71,11 +53,12 @@ public class HelperUser extends HelperBase{
     }
 
     public boolean isYallaButtonNotActive() {
-        boolean res =  isElementPresent(By.cssSelector("button[disabled]"));
+        boolean res = isElementPresent(By.cssSelector("button[disabled]"));
         WebElement element = wd.findElement(By.cssSelector("button[type='submit']"));
         boolean result = element.isEnabled();
         return res && !result;
     }
+
     ///****************** Registration****************
     public void openRegistrationForm() {
         click(By.xpath("//a[text()=' Sign up ']"));
@@ -89,41 +72,51 @@ public class HelperUser extends HelperBase{
     }
 
     public void checkPolicy() {
-         //click(By.id("terms-of-use"));
+        //click(By.id("terms-of-use"));
         click(By.cssSelector("label[for='terms-of-use']"));
         // document.querySelector('#terms-of-use').click();
         //pause(3000);
         //JavascriptExecutor js = (JavascriptExecutor) wd;
         //js.executeScript("document.querySelector('#terms-of-use').click();");
     }
-    public void checkPolicyXY()
-    {
-        Dimension size = wd.manage().window().getSize();
-        System.out.println("Wight Screen---->" +size.getWidth());
 
-        WebElement label = wd.findElement(By.cssSelector("label[for='terms-of-use']"));
-        Dimension dimension = label.getSize();
+    public void checkPolicyXY() {
+        if (!wd.findElement(By.id("terms-of-use")).isSelected()) {
+            Dimension size = wd.manage().window().getSize();
+            System.out.println("Wight Screen---->" + size.getWidth());
 
-        Rectangle rect = label.getRect();
-        int w = rect.getWidth();
+            WebElement label = wd.findElement(By.cssSelector("label[for='terms-of-use']"));
 
-        int xOffSet=-w/2;
+            Dimension dimension = label.getSize();
 
-        Actions actions = new Actions(wd);
+            Rectangle rect = label.getRect();
+            int w = rect.getWidth();
 
-        actions.moveToElement(label,xOffSet,2).click().release().perform();
+            int xOffSet = -w / 2;
 
-    }
-    //public boolean isAlertPresent(String message)
-    //{
-      //  WebDriverWait wait = new WebDriverWait(wd, Duration.ofSeconds(10));
+            Actions actions = new Actions(wd);
+
+            actions.moveToElement(label, xOffSet, 2).click().release().perform();
+
+        }
+        //public boolean isAlertPresent(String message)
+        //{
+        //  WebDriverWait wait = new WebDriverWait(wd, Duration.ofSeconds(10));
         //Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         //System.out.println(alert.getText());
         //if(alert != null && alert.getText().contains(message))
         //{
-         //   alert.accept();
-           // return true;
+        //   alert.accept();
+        // return true;
         //}
         //return false;
-    //}
+        //}
+    }
+
+    public void login(User user) {
+        openLoginForm();
+        fillLoginForm(user);
+        submit();
+        closeWindow();
+    }
 }

@@ -1,0 +1,23 @@
+18:34:42.919  INFO  manager.ApplicationManager - All tests run in Chrome browser
+18:34:44.672  INFO  manager.ApplicationManager - The link--->https://ilcarro.web.app/search
+18:34:44.698  INFO  tests.TestBase - Started Method --->loginSuccess
+18:34:49.724  INFO  tests.TestBase - Test data ---> Email: 'cherkasskyantony@gmail.com' & Password: 'Ant1990$' 
+18:34:51.427  INFO  tests.TestBase - 'Assert check is 'Logged in success' massage exist'
+18:34:51.472  INFO  tests.TestBase - Started Method --->loginSuccess1
+18:34:51.575  INFO  tests.TestBase - Before method finish logout
+18:34:51.577  INFO  tests.TestBase - Start test 'loginSuccess1'
+18:34:51.577  INFO  tests.TestBase - Test data ---> Email: 'cherkasskyantony@gmail.com' & Password: 'Ant1990$' 
+18:34:52.469  INFO  tests.TestBase - 'Assert check is 'Logged in success' massage exist'
+18:34:52.516  INFO  tests.TestBase - Started Method --->loginSuccessModel
+18:34:52.599  INFO  tests.TestBase - Before method finish logout
+18:34:52.600  INFO  tests.TestBase - Test data ---> Email: 'cherkasskyantony@gmail.com' & Password: 'Ant1990$' 
+18:34:53.415  INFO  tests.TestBase - 'Assert check is 'Logged in success' massage exist'
+18:34:53.461  INFO  tests.TestBase - Started Method --->loginUnregistered
+18:34:53.536  INFO  tests.TestBase - Before method finish logout
+18:34:53.537  INFO  tests.TestBase - Test data ---> Email: 'luck@gmail.com' & Password: 'luck12345$' 
+18:34:54.610  INFO  tests.TestBase - 'Assert check is 'Login or Password incorrect'
+18:34:54.660  INFO  tests.TestBase - Started Method --->loginWrongEmail
+18:34:59.682  INFO  tests.TestBase - Test data ---> Email: 'cherkasskyantonygmail.com' & Password: 'Ant1990$' 
+18:35:00.131  INFO  tests.TestBase - 'Assert check is 'It'snot look like email' massage exist'
+18:35:05.190  INFO  tests.TestBase - Started Method --->loginWrongPassword
+18:35:10.208  INFO  tests.TestBase - Test data ---> Email: 'cherkasskyantonygmail.com' & Password: 'Ant1990' 

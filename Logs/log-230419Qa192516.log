@@ -1,0 +1,25 @@
+19:25:18.127  INFO  manager.ApplicationManager - All tests run in Chrome browser
+19:25:19.618  INFO  manager.ApplicationManager - The link--->https://ilcarro.web.app/search
+19:25:19.642  INFO  tests.TestBase - Started Method ---> registrationSuccess
+19:25:24.664  INFO  tests.TestBase - Start test 'registrationSuccess'
+19:25:24.664  INFO  tests.TestBase - Test data ---> New User: 'Lisa' & LastName: 'Snow' 
+19:25:27.466  INFO  tests.TestBase - 'Assert check is 'You are logged in success' massage exist'
+19:25:27.528  INFO  tests.TestBase - Started Method ---> registrationWithoutEmail
+19:25:27.606  INFO  tests.TestBase - Before method finish logout
+19:25:27.606  INFO  tests.TestBase - Test data ---> New User: 'Antony' & Mail: 'Empty' 
+19:25:28.633  INFO  tests.TestBase - Assert check is 'Email is required' massage exist
+19:25:33.685  INFO  tests.TestBase - Started Method ---> registrationWithoutFillingInRequiredFields
+19:25:38.696  INFO  tests.TestBase - Test data ---> New User: 'empty' & RequiredFields: 'Empty' 
+19:25:39.394  INFO  tests.TestBase - Assert check is 'Name is required' massage exist
+19:25:44.393  INFO  tests.TestBase - Started Method ---> registrationWithoutFirstName
+19:25:49.448  INFO  tests.TestBase - Test data ---> New User: 'Empty Name' & Mail: 'cherkasskyantony@gmail.com' 
+19:25:50.176  INFO  tests.TestBase - Assert check is 'Name is required' massage exist
+19:25:55.236  INFO  tests.TestBase - Started Method ---> registrationWithoutPassword
+19:26:00.254  INFO  tests.TestBase - Test data ---> New User: 'Antony' & Password: 'Empty' 
+19:26:01.042  INFO  tests.TestBase - Assert check is 'Password is required' massage exist
+19:26:06.055  INFO  tests.TestBase - Started Method ---> registrationWrongEmail
+19:26:11.086  INFO  tests.TestBase - Test data ---> New User: 'Anton' & WrongMail: 'cherkasskyantonygmail.com' 
+19:26:11.853  INFO  tests.TestBase - 'Assert check is 'Wrong email format' massage exist'
+19:26:16.905  INFO  tests.TestBase - Started Method ---> registrationWrongPassword
+19:26:21.936  INFO  tests.TestBase - Test data ---> New User: 'Anton' & LastName: 'Cherkassky' 
+19:26:22.709  INFO  tests.TestBase - 'Assert check is 'Password must contain minimum 8 symbols' massage exist'

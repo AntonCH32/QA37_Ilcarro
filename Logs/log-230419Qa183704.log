@@ -1,0 +1,24 @@
+18:37:06.505  INFO  manager.ApplicationManager - All tests run in Chrome browser
+18:37:08.092  INFO  manager.ApplicationManager - The link--->https://ilcarro.web.app/search
+18:37:08.120  INFO  tests.TestBase - Started Method --->loginSuccess
+18:37:13.191  INFO  tests.TestBase - Test data ---> Email: 'cherkasskyantony@gmail.com' & Password: 'Ant1990$' 
+18:37:14.826  INFO  tests.TestBase - 'Assert check is 'Logged in success' massage exist'
+18:37:14.879  INFO  tests.TestBase - Started Method --->loginSuccess1
+18:37:14.966  INFO  tests.TestBase - Before method finish logout
+18:37:14.967  INFO  tests.TestBase - Start test 'loginSuccess1'
+18:37:14.967  INFO  tests.TestBase - Test data ---> Email: 'cherkasskyantony@gmail.com' & Password: 'Ant1990$' 
+18:37:16.307  INFO  tests.TestBase - 'Assert check is 'Logged in success' massage exist'
+18:37:16.351  INFO  tests.TestBase - Started Method --->loginSuccessModel
+18:37:16.429  INFO  tests.TestBase - Before method finish logout
+18:37:16.430  INFO  tests.TestBase - Test data ---> Email: 'cherkasskyantony@gmail.com' & Password: 'Ant1990$' 
+18:37:17.767  INFO  tests.TestBase - 'Assert check is 'Logged in success' massage exist'
+18:37:17.817  INFO  tests.TestBase - Started Method --->loginUnregistered
+18:37:17.883  INFO  tests.TestBase - Before method finish logout
+18:37:17.884  INFO  tests.TestBase - Test data ---> Email: 'luck@gmail.com' & Password: 'luck12345$' 
+18:37:18.794  INFO  tests.TestBase - 'Assert check is 'Login or Password incorrect'
+18:37:18.841  INFO  tests.TestBase - Started Method --->loginWrongEmail
+18:37:23.850  INFO  tests.TestBase - Test data ---> Email: 'cherkasskyantonygmail.com' & Password: 'Ant1990$' 
+18:37:24.284  INFO  tests.TestBase - 'Assert check is 'It'snot look like email' massage exist'
+18:37:29.329  INFO  tests.TestBase - Started Method --->loginWrongPassword
+18:37:34.346  INFO  tests.TestBase - Test data ---> Email: 'cherkasskyantonygmail.com' & Password: 'Ant1990' 
+18:37:40.306  INFO  tests.TestBase - 'Assert check is 'isYallaButtonNotActive'

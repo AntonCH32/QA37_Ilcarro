@@ -1,0 +1,5 @@
+18:36:29.199  INFO  manager.ApplicationManager - All tests run in Chrome browser
+18:36:30.910  INFO  manager.ApplicationManager - The link--->https://ilcarro.web.app/search
+18:36:30.936  INFO  tests.TestBase - Started Method --->loginWrongPassword
+18:36:35.961  INFO  tests.TestBase - Test data ---> Email: 'cherkasskyantonygmail.com' & Password: 'Ant1990' 
+18:36:42.690  INFO  tests.TestBase - 'Assert check is 'isYallaButtonNotActive'

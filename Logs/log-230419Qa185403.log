@@ -1,0 +1,24 @@
+18:54:05.997  INFO  manager.ApplicationManager - All tests run in Chrome browser
+18:54:07.553  INFO  manager.ApplicationManager - The link--->https://ilcarro.web.app/search
+18:54:07.583  INFO  tests.TestBase - Started Method ---> loginSuccess
+18:54:12.648  INFO  tests.TestBase - Test data ---> Email: 'cherkasskyantony@gmail.com' & Password: 'Ant1990$' 
+18:54:14.340  INFO  tests.TestBase - 'Assert check is 'Logged in success' massage exist'
+18:54:14.399  INFO  tests.TestBase - Started Method ---> loginSuccess1
+18:54:14.476  INFO  tests.TestBase - Before method finish logout
+18:54:14.478  INFO  tests.TestBase - Start test 'loginSuccess1'
+18:54:14.478  INFO  tests.TestBase - Test data ---> Email: 'cherkasskyantony@gmail.com' & Password: 'Ant1990$' 
+18:54:15.383  INFO  tests.TestBase - 'Assert check is 'Logged in success' massage exist'
+18:54:15.431  INFO  tests.TestBase - Started Method ---> loginSuccessModel
+18:54:15.512  INFO  tests.TestBase - Before method finish logout
+18:54:15.513  INFO  tests.TestBase - Test data ---> Email: 'cherkasskyantony@gmail.com' & Password: 'Ant1990$' 
+18:54:16.299  INFO  tests.TestBase - 'Assert check is 'Logged in success' massage exist'
+18:54:16.358  INFO  tests.TestBase - Started Method ---> loginUnregistered
+18:54:16.426  INFO  tests.TestBase - Before method finish logout
+18:54:16.427  INFO  tests.TestBase - Test data ---> Email: 'luck@gmail.com' & Password: 'luck12345$' 
+18:54:17.417  INFO  tests.TestBase - 'Assert check is alert present 'Login or Password incorrect'
+18:54:17.473  INFO  tests.TestBase - Started Method ---> loginWrongEmail
+18:54:22.514  INFO  tests.TestBase - Test data ---> Email: 'cherkasskyantonygmail.com' & Password: 'Ant1990$' 
+18:54:22.946  INFO  tests.TestBase - 'Assert check is alert present 'It'snot look like email' massage exist'
+18:54:28.014  INFO  tests.TestBase - Started Method ---> loginWrongPassword
+18:54:33.036  INFO  tests.TestBase - Test data ---> Email: 'cherkasskyantonygmail.com' & Password: 'Ant1990' 
+18:54:38.965  INFO  tests.TestBase - 'Assert check is 'isYallaButtonNotActive'

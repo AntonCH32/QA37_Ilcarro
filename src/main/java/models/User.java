@@ -7,22 +7,22 @@ public class User {
     private String email;
     private String password;
 
-    public User withFirstName(String firstName) {
+    public User setFirstName(String firstName) {
         this.firstName = firstName;
         return this;
     }
 
-    public User withLastName(String lastName) {
+    public User setLastName(String lastName) {
         this.lastName = lastName;
         return this;
     }
 
-    public User withEmail(String email) {
+    public User setEmail(String email) {
         this.email = email;
         return this;
     }
 
-    public User withPassword(String password) {
+    public User setPassword(String password) {
         this.password = password;
         return this;
     }
